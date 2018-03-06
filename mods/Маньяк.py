@@ -10,7 +10,7 @@ def bsGetAPIVersion():
     return 4
 
 def bsGetGames():
-    return [ZombieHorde]
+    return [Маньяк]
 
 
 class Icon(bs.Actor):
@@ -206,7 +206,7 @@ class ZombieHorde(bs.TeamGameActivity):
 
     @classmethod
     def getName(cls):
-        return 'Zombie Horde'
+        return 'Маньяк'
 
     @classmethod
     def getScoreInfo(cls):
@@ -217,7 +217,7 @@ class ZombieHorde(bs.TeamGameActivity):
     
     @classmethod
     def getDescription(cls,sessionType):
-        return 'Kill walkers for points!'
+        return 'Попытаться выжить и убежать от маньяка!!'
 
     @classmethod
     def supportsSessionType(cls,sessionType):
@@ -231,7 +231,7 @@ class ZombieHorde(bs.TeamGameActivity):
     @classmethod
     def getSettings(cls,sessionType):
         settings = [("Lives Per Player",{'default':1,'minValue':1,'maxValue':10,'increment':1}),
-                    ("Max Zombies", {'default':10,'minValue':5, 'maxValue':50,'increment':5}),
+                    ("Max Zombies", {'default':1,'minValue':0, 'maxValue':0,'increment':5}),
                     ("Time Limit",{'choices':[('None',0),('1 Minute',60),
                                             ('2 Minutes',120),('5 Minutes',300),
                                             ('10 Minutes',600),('20 Minutes',1200)],'default':120}),
